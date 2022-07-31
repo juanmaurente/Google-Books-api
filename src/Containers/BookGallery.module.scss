@@ -1,0 +1,7 @@
+.BookGallery {
+	width: 70vw;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 0.5fr));
+	gap: 15px;
+	margin: 15px auto;
+}
