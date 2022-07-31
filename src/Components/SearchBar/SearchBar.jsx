@@ -1,4 +1,6 @@
 import styles from './SearchBar.module.scss';
+import fetchBooks from '../../Data/FetchBooks';
+
 import { useState } from 'react';
 
 function SearchBar() {
@@ -12,6 +14,7 @@ function SearchBar() {
 	const handleSearch = (e) => {
 		e.preventDefault();
 		console.log("you've pressed the button");
+		console.log(fetchBooks(search));
 	};
 
 	return (
