@@ -1,21 +1,9 @@
 import styles from './SearchBar.module.scss';
-import fetchBooks from '../../Data/FetchBooks';
-
+import handleSearch from '../../Data/Search';
 import { useState } from 'react';
 
 function SearchBar() {
 	const [search, setSearch] = useState('');
-
-	const handleSearchInput = (e) => {
-		setSearch(e.target.value);
-		console.log(search);
-	};
-
-	const handleSearch = (e) => {
-		e.preventDefault();
-		console.log("you've pressed the button");
-		console.log(fetchBooks(search));
-	};
 
 	return (
 		<div className={styles.searchBar}>
@@ -24,7 +12,10 @@ function SearchBar() {
 				type='text'
 				className={styles.searchBar__input}
 				value={search}
-				onChange={handleSearchInput}
+				onChange={(e) => {
+					console.log(search);
+					setSearch(e.target.value);
+				}}
 				placeholder='Type name of the book...'
 			/>
 			<button onClick={handleSearch}>Search</button>
