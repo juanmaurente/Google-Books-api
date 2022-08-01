@@ -1,34 +1,37 @@
-import Book from '../../Components/Book/Book';
-import { useState, useEffect, useRef } from 'react';
-import fetchBooks from '../../Data/FetchBooks';
 import styles from './BookGallery.module.scss';
+import Book from '../../Components/Book';
+import image from '../../Images/matt-seymour-DbZLN1BT_sU-unsplash.jpg';
 
-import image1 from '../../Images/image1.jpg';
-import image2 from '../../Images/image2.jpg';
-import image3 from '../../Images/image3.jpg';
-import image4 from '../../Images/image4.jpg';
-
-function BookGallery({ booksData }) {
-	const [books, setBooks] = useState([]);
-	const firstMount = useRef(true);
-
-	useEffect(() => {
-		if (firstMount.current) {
-			firstMount.current = false;
-			return;
-		}
-		const wrapper = async () => {
-			const data = await fetchBooks();
-			setBooks(data);
-		};
-		wrapper();
-	}, []);
-
+function BookGallery({ books }) {
 	return (
 		<div className={styles.BookGallery}>
-			{books.map((book) => (
-				<Book key={book.id} data={book} />
-			))}
+			{books.map((book, index) => {
+				let thumbnail =
+					book.volumeInfo.imageLinks &&
+					book.volumeInfo.imageLinks.smallThumbnail;
+
+				if (thumbnail !== undefined) {
+					return (
+						<Book
+							key={index}
+							title={book.volumeInfo.title}
+							img={thumbnail}
+							author={book.volumeInfo.authors}
+							description={book.volumeInfo.description}
+						/>
+					);
+				} else {
+					return (
+						<Book
+							key={index}
+							title={book.volumeInfo.title}
+							img={image}
+							author={book.volumeInfo.authors}
+							description={book.volumeInfo.description}
+						/>
+					);
+				}
+			})}
 		</div>
 	);
 }

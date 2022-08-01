@@ -1,15 +1,9 @@
 import styles from './Book.module.scss';
 
-function Book({ data }) {
+function Book({ img, title, author, description }) {
 	return (
 		<div className={styles.Book}>
-			<img
-				src={data.volumeInfo.imageLinks.smallThumbnail}
-				className={styles.Book__Image}
-				alt={data.volumeInfo.title}
-			/>
-			{/* <img src={img} alt='book front' /> */}
-			{/* <p key={index}>{title}</p> */}
+			<img src={img} className={styles.Book__Image} alt='' />
 		</div>
 	);
 }

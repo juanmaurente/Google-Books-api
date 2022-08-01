@@ -1,24 +1,26 @@
 import styles from './SearchBar.module.scss';
-import handleSearch from '../../Data/Search';
 import { useState } from 'react';
 
-function SearchBar() {
+function SearchBar({ onSubmit }) {
 	const [search, setSearch] = useState('');
 
+	const handleChange = (e) => setSearch(e.target.value);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		onSubmit(search);
+	};
 	return (
 		<div className={styles.searchBar}>
 			<h3 className={styles.searchBar__description}>Search a Book</h3>
-			<form onSubmit={handleSearch}>
+			<form onSubmit={handleSubmit}>
 				<input
 					type='text'
 					className={styles.searchBar__input}
 					value={search}
-					onChange={(e) => {
-						setSearch(e.target.value);
-					}}
+					onChange={handleChange}
 					placeholder='Type name of the book...'
 				/>
-				<button>Search</button>
+				<button>Submit</button>
 			</form>
 		</div>
 	);
