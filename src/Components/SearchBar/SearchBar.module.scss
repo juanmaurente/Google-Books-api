@@ -1,5 +1,4 @@
 .searchBar {
-	background-color: grey;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -7,21 +6,27 @@
 	padding: 25px;
 
 	&__description {
-		background-color: blue;
 		padding: 5px;
 	}
 
 	&__input {
-		margin: 10px;
+		margin: 10px 0px 10px 10px;
 		padding: 10px;
 		width: 350px;
-		border-radius: 5px;
-		border: 0px;
+		border-radius: 15px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border: 1px solid grey;
 	}
 
 	& button {
+		background-color: blue;
+		color: white;
 		width: 100px;
-		border-radius: 5px;
+		height: 37px;
+		border-radius: 15px;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
 		padding: 5px;
 		border: 0px;
 	}

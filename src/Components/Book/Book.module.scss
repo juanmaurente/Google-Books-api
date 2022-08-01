@@ -1,9 +1,21 @@
-.Book {
-	height: 200px;
+.book {
+	height: 250px;
+	display: flex;
 
-	&__Image {
+	&_img {
 		width: 180px;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	&_info {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		background-color: rgba(97, 40, 40, 0.103);
+
+		&_title {
+			padding: 10px 2px;
+		}
 	}
 }
