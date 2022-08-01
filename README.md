@@ -1,5 +1,10 @@
 # Google Books API Search Engine
 
+The process to create this API was first to have a snapshot of the final design. I wanted to acquire something simple, responsive but attractive. Once I had that picture I developed the different containers and components involved. Some of the challenges I faced during the process were:
+
+-   Get a response from the library
+-   Able to handle the search bar and input the query into the fetch request
+
 ## Outline
 
 This project will require you to use both DOM manipulation and Asynchronous programming.
