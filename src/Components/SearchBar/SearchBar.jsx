@@ -10,12 +10,12 @@ function SearchBar({ onSubmit }) {
 		onSubmit(search);
 	};
 	return (
-		<div className={styles.searchBar}>
-			<h3 className={styles.searchBar__description}>Search a Book</h3>
+		<div className={styles.search}>
+			<h3 className={styles.search_description}>Search Book</h3>
 			<form onSubmit={handleSubmit}>
 				<input
 					type='text'
-					className={styles.searchBar__input}
+					className={styles.search_input}
 					value={search}
 					onChange={handleChange}
 					placeholder='Type name of the book...'

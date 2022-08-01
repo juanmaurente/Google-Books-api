@@ -1,0 +1,32 @@
+.footer {
+	margin-top: 50px;
+	color: #fca4a4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100vw;
+	height: 60vh;
+	background-color: #353440;
+	flex-direction: column;
+}
+.footer_logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #fca4a4;
+	font-size: 20px;
+	padding-bottom: 25px;
+}
+.footer_logo_thick {
+	font-weight: 800;
+	padding-right: 3px;
+}
+.footer_logo_thin {
+	font-weight: 300;
+}
+.footer_date {
+	padding-top: 15px;
+	font-weight: 300;
+}

@@ -4,6 +4,7 @@ import SearchBar from './Components/SearchBar';
 import { useState, useEffect } from 'react';
 import BookGallery from './Containers/BookGallery/BookGallery';
 import fetchBooks from './Data/FetchBooks';
+import Footer from './Components/Footer';
 
 function App() {
 	const [search, setSearch] = useState('');
@@ -26,6 +27,7 @@ function App() {
 			<Header />
 			<SearchBar onSubmit={setSearch} />
 			<BookGallery books={books} />
+			<Footer />
 		</div>
 	);
 }
