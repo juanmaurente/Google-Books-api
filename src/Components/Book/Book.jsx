@@ -1,10 +1,13 @@
 import styles from './Book.module.scss';
-import axios from 'axios';
 
-function Book({ index, title, img, alt }) {
+function Book({ data }) {
 	return (
 		<div className={styles.Book}>
-			<img src={img} alt={alt} className={styles.Book__Image} />
+			<img
+				src={data.volumeInfo.imageLinks.smallThumbnail}
+				className={styles.Book__Image}
+				alt={data.volumeInfo.title}
+			/>
 			{/* <img src={img} alt='book front' /> */}
 			{/* <p key={index}>{title}</p> */}
 		</div>
