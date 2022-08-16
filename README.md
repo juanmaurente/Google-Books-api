@@ -4,7 +4,7 @@ The process to create this API was first to have a snapshot of the final design.
 
 
 Some of the challenges I faced during the process were:
--   Decision to migrate from pure JavaScript project to React.js
+-   Decision to migrate from a pure JavaScript project to React.js
 -   Get a response from the library took me more than expected as I 
 -   Able to handle the search bar and input the query into the fetch request
 
